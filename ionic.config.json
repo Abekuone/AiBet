@@ -1,0 +1,7 @@
+{
+  "name": "Aibet",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
