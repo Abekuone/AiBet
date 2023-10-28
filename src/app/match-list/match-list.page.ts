@@ -1,6 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FootballDataService } from '../football-data.service';
 import { ModalController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
+import { AuthService } from '../auth.service';
+import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
+import { BetService } from '../services/bet.service';
 
 @Component({
   selector: 'app-match-list',
@@ -23,11 +28,18 @@ export class MatchListPage implements OnInit {
 
   homeTeamCrest!: string;
   awayTeamCrest!: string;
+  score!: number;
 
 
   constructor(
     private footballDataService: FootballDataService,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private authService: AuthService,
+    private userService: UserService,
+    private betService: BetService,
+    private router: Router,
+    private alertController: AlertController,
+    private toastController: ToastController
   ) {}
     
 
@@ -44,7 +56,8 @@ export class MatchListPage implements OnInit {
     awayTeam: string,
     type: string,
     homeTeamCrest: string,
-    awayTeamCrest: string
+    awayTeamCrest: string,
+
     ) {
     this.betAmount = 0;
     this.homeTeamName = homeTeam;

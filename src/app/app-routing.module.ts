@@ -33,6 +33,14 @@ const routes: Routes = [
     path: 'bet-modal',
     loadChildren: () => import('./bet-modal/bet-modal.module').then( m => m.BetModalPageModule)
   },
+  {
+    path: 'bet-list',
+    loadChildren: () => import('./bet-list/bet-list.module').then( m => m.BetListPageModule)
+  },
+  {
+    path: 'wallet',
+    loadChildren: () => import('./wallet/wallet.module').then( m => m.WalletPageModule)
+  },
   
 ];
 

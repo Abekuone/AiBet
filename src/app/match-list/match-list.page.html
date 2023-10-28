@@ -17,11 +17,21 @@
           </ion-col>
 
           <ion-col size="2">
-            <ion-note>
-              {{ match.utcDate | date: 'dd/MM HH:mm' }}
-            </ion-note>
+            <ion-row class="date">
+              <ion-note>
+                {{ match.utcDate | date: 'dd/MM HH:mm' }}
+              </ion-note>
+            </ion-row>
+            <ion-row class="score">
+                <ion-list>
+                  <ion-item>
+                    <ion-badge slot="start">{{ match.score.fullTime.home }}</ion-badge>
+                    <ion-badge>{{ match.score.fullTime.away }}</ion-badge>
+                  </ion-item>
+                </ion-list>
+            </ion-row>
           </ion-col>
-          
+
           <ion-col size="2" class="team2">
             <ion-thumbnail>
               <img [src]="match.awayTeam.crest" alt="Logo équipe extérieure">
@@ -61,7 +71,6 @@
         </ion-thumbnail>
         {{ homeTeamName }}
       </ion-item>
-      <p class="vs-text">VS</p>
       <ion-item class="team-item">
         <ion-thumbnail>
           <img [src]="awayTeamCrest" alt="Logo équipe extérieure">

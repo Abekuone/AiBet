@@ -11,11 +11,6 @@
       <p>{{ (utilisateur | async)?.email }}</p>
     </ion-card-content>
   </ion-card>
-
-  <ion-button expand="full" (click)="deconnecterUtilisateur()">Se déconnecter</ion-button>
+  <ion-button expand="full" routerLink="/match-list" color="success">Voir les matchs à venir</ion-button>
+  <ion-button expand="full" (click)="deconnecterUtilisateur()" color="danger">Se déconnecter</ion-button>
 </ion-content>
-
-<ion-content>
-  <ion-button routerLink="/match-list">Voir les matchs à venir</ion-button>
-</ion-content>
-

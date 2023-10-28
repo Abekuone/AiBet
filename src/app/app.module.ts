@@ -15,6 +15,9 @@ import { MatchListComponent } from './components/match-list/match-list.component
 import { RouterModule } from '@angular/router';
 import { StatusBar } from '@capacitor/status-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { BetService } from './services/bet.service';
+import { UserService } from './services/user.service';
+import { MatchService } from './services/match.service';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBTrLIX5ssz_ly_RAzpP7mcrj3j4mz9QbI",
@@ -41,8 +44,13 @@ const firebaseConfig = {
     HttpClientModule,
   ],
   providers: [
+    BetService,
+    UserService,
+    MatchService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
 ],
+
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}
