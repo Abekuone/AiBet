@@ -1,0 +1,68 @@
+/* Style pour le contenu de la page */
+  /* Style pour les titres */
+  ion-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Style pour les étiquettes des champs */
+  ion-label {
+    color: #555;
+    font-size: 14px;
+  }
+  
+  /* Style pour les champs de saisie */
+  ion-input {
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  /* Style pour le bouton d'inscription */
+  ion-button[type="submit"] {
+    --ion-border-radius: 25px; /* Bordure ronde pour le bouton */
+    --ion-background-color: #3880ff; /* Couleur de fond du bouton */
+    --ion-color: #fff; /* Couleur du texte du bouton */
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+
+  /* Ajoutez ce CSS à votre fichier CSS personnalisé */
+
+.form-container {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  text-align: center;
+  margin-top: 10%;
+}
+
+ion-list {
+  padding: 0;
+}
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-start: 0;
+  --inner-padding-end: 0;
+  --highlight-height: 0;
+  --border-width: 0;
+  border-bottom: 1px solid #ccc; /* Ligne de séparation entre les éléments du formulaire */
+}
+
+ion-button {
+  --ion-background-color: #007BFF; /* Couleur du bouton */
+  --ion-color: #fff; /* Couleur du texte du bouton */
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+}

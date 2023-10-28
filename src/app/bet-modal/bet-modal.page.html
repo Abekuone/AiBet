@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>bet-modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Montant du pari</ion-label>
+      <ion-input type="number" [(ngModel)]="betAmount"></ion-input>
+    </ion-item>
+    <ion-item>
+      Équipe en compétition : {{ match.homeTeam.shortName }} vs {{ match.awayTeam.shortName }}
+    </ion-item>
+    <ion-item>
+      Cote : {{ odds | number: '1.2-2' }}
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="placeBet()">Parier</ion-button>
+</ion-content>
+
+

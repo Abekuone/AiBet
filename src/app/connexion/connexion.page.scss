@@ -1,0 +1,29 @@
+/* Ajoutez ce CSS à votre fichier CSS personnalisé */
+.login-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #007BFF;
+  }
+  
+  .form-container {
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 0 auto; /* Centre le formulaire horizontalement */
+    margin-top: 30%; /* Ajoutez cette ligne pour la marge supérieure */
+  }
+  
+  .login-button {
+    --ion-background-color: #007BFF;
+    --ion-color: #fff;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  

@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Matchs à venir</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let match of matches">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2" class="team1">
+            <ion-thumbnail>
+              <img [src]="match.homeTeam.crest" alt="Logo équipe domicile">
+            </ion-thumbnail>
+            <p>{{ match.homeTeam.shortName }}</p>
+          </ion-col>
+
+          <ion-col size="2">
+            <ion-note>
+              {{ match.utcDate | date: 'dd/MM HH:mm' }}
+            </ion-note>
+          </ion-col>
+          
+          <ion-col size="2" class="team2">
+            <ion-thumbnail>
+              <img [src]="match.awayTeam.crest" alt="Logo équipe extérieure">
+            </ion-thumbnail>
+            <p>{{ match.awayTeam.shortName }}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row class="bet-options">
+          <ion-col size="4">
+            <ion-badge color="success" (click)="openCustomDialog(match.odds.homeWin, match.homeTeam.shortName, match.awayTeam.shortName, 'Victoire à domicile', match.homeTeam.crest, match.awayTeam.crest)">
+              {{ match.odds.homeWin }}
+            </ion-badge>
+          </ion-col>
+          <ion-col size="4">
+            <ion-badge color="warning" (click)="openCustomDialog(match.odds.draw, match.homeTeam.shortName, match.awayTeam.shortName, 'Match nul', match.homeTeam.crest, match.awayTeam.crest)">
+              {{ match.odds.draw }}
+            </ion-badge>
+          </ion-col>
+          <ion-col size="4">
+            <ion-badge color="danger" (click)="openCustomDialog(match.odds.awayWin, match.homeTeam.shortName, match.awayTeam.shortName, 'Victoire à l\'extérieur', match.homeTeam.crest, match.awayTeam.crest)">
+              {{ match.odds.awayWin }}
+            </ion-badge>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+<ion-modal id="custom-modal" #customModal>
+  <ng-template>
+    <div class="wrapper">
+      <ion-item class="team-item">
+        <ion-thumbnail>
+          <img [src]="homeTeamCrest" alt="Logo équipe domicile">
+        </ion-thumbnail>
+        {{ homeTeamName }}
+      </ion-item>
+      <p class="vs-text">VS</p>
+      <ion-item class="team-item">
+        <ion-thumbnail>
+          <img [src]="awayTeamCrest" alt="Logo équipe extérieure">
+        </ion-thumbnail>
+        {{ awayTeamName }}
+      </ion-item>
+
+      <p>
+        <ion-text color="secondary">
+          <p>{{ betType }}</p>
+        </ion-text>
+
+        <ion-text color="success">
+          <p>Cote : {{ betOdds }}</p>
+        </ion-text>
+      </p>
+
+      <ion-item class="wrapper">
+        <ion-label>Montant (FCFA) :</ion-label>
+        <ion-input type="number" [(ngModel)]="betAmount" min="100" [step]="100"></ion-input>
+      </ion-item>
+      <ion-button expand="full" (click)="placeBet()" color="success">Parier</ion-button>
+      <ion-button expand="full" (click)="closeCustomDialog()" color="danger">Annuler</ion-button>
+    </div>
+  </ng-template>
+</ion-modal>

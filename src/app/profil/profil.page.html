@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="utilisateur">
+    <ion-card-content>
+      <h3>{{ (utilisateur | async)?.displayName }}</h3>
+      <p>{{ (utilisateur | async)?.email }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" (click)="deconnecterUtilisateur()">Se déconnecter</ion-button>
+</ion-content>
+
+<ion-content>
+  <ion-button routerLink="/match-list">Voir les matchs à venir</ion-button>
+</ion-content>
+

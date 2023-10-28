@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="login-background">
+  <!-- <div class="icon">
+    <img src="assets/ballon.jpg" alt="Sports Betting Icon">
+  </div> -->
+  <div class="form-container">
+    <form [formGroup]="connexionForm" (ngSubmit)="submitForm()">
+      <ion-list>
+        <ion-item lines="none">
+          <ion-label position="floating">Adresse e-mail</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label position="floating">Mot de passe</ion-label>
+          <ion-input type="password" formControlName="motDePasse"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-button expand="full" class="login-button" type="submit">Se connecter</ion-button>
+    </form>
+    <div class="main-content">
+      <p> <a href="/inscription">Pas de compte ?</a> </p>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ybet-aac0a": {
+      "hosting": {
+        "app": [
+          "ybet-aac0a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ybet-aac0a"
+  }
+}
